@@ -78,7 +78,7 @@ public class TextParser {
             CompositePart wordList = new CompositePart();
             word = matcher.group();
             //System.out.print(word);
-            wordList = parseToSymbol(wordList, word);
+            wordList = parseToSignAndWord(wordList, word);
             sentenceList.addElement(wordList);
         }
         return sentenceList;
@@ -98,13 +98,13 @@ public class TextParser {
         return wordSignList;
     }
 
-    private CompositePart parseToSymbol(CompositePart wordList, String word) {
-        char[] chars = word.toCharArray();
+    private CompositePart parseToSymbol(CompositePart wordSignList, String wordSign) {
+        char[] chars = wordSign.toCharArray();
         for (char ch : chars) {
             Symbol symbol = new Symbol(ch);
-            wordList.addElement(symbol);
+            wordSignList.addElement(symbol);
         }
-        return wordList;
+        return wordSignList;
     }
 
 

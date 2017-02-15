@@ -5,5 +5,4 @@ public interface IPart {
 
     void addElement(IPart part);
 
-
 }
